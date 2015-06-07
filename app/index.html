@@ -28,6 +28,13 @@
             </div>
         <ul id="listing"></ul>
         </div>
+        <script type="text/template" id="beer-template">
+            <span class="list-header"> <%= name %> </span>
+            <div class"details">
+            ABV: <%= abv %>
+            Description: <%= descript %>
+            </div>
+        </script>
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -48,8 +55,10 @@
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/data.json"></script>
+        <script src="scripts/router/router.js"></script>
+        <script src="scripts/models/beer-model.js"></script>
+        <script src="scripts/views/beer-view.js"></script>
         <script src="scripts/main.js"></script>
-        <script src="scripts/templates.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -4,7 +4,7 @@ var app = {
   collections: {},
   routers: {},
   init: function(){
-
+    directory = new app.views.Beers(directoryData);
   }
 
 };
