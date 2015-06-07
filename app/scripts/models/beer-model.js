@@ -21,7 +21,7 @@ app.models.Beer = Backbone.Model.extend({
   // }
 });
 
-app.collections.Beer = Backbone.Collection.extend({
+app.collections.Beers = Backbone.Collection.extend({
   model: app.models.Beer,
 
   comparator: function(beer){
