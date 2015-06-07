@@ -18,18 +18,15 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>jQuery</li>
-            <li>Backbone.js</li>
-            <li>Lodash.js</li>
-            <li>Modernizr</li>
-
-          </ul>
+        <div id="wrapper">
+            <h1>Interactive Beer Directory</h1>
+            <div class="tools"></div>
+                Search: <br>
+                <input type="text" id="searchBox"><br><br>
+                Filter:
+                <div id="filters"
+            </div>
+        <ul id="listing"></ul>
         </div>
 
 
@@ -50,6 +47,7 @@
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
+        <script src="scripts/data.json"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
         <!-- endbuild -->
