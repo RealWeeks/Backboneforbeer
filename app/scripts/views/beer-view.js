@@ -8,7 +8,7 @@ app.views.Beer = Backbone.View.extend({
     };
   },
 
-  template: _.template($('#been-template').html()),
+  template: _.template($('#beer-template').html()),
 
   render: function(){
     this.$el.html(this.template(this.model.toJSON()));
