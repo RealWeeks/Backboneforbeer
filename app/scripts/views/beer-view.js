@@ -33,6 +33,11 @@ app.views.Beers = Backbone.View.extend({
     this.collection = new app.collections.Beers(data);
     // debugger;
     this.render();
+    this.on('change:searchFilter', this.filterBySearch, this);
+  },
+
+  events: {
+    'keyup #searchBox': 'searchFilter'
   },
 
   render: function(){
@@ -48,6 +53,15 @@ app.views.Beers = Backbone.View.extend({
       model:beer
     });
     $('#listing').append(newbeer.render().el);
+  },
+
+  searchFilter: function(e){
+    this.searchFilter = e.target.value;
+    this.trigger('change:searchFilter');
+  },
+
+  filterBySearch:function(){
+    this.collection.reset(directoryData), {silent: true};
   }
 
 });
