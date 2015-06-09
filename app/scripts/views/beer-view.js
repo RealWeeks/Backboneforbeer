@@ -34,6 +34,8 @@ app.views.Beers = Backbone.View.extend({
     // debugger;
     this.render();
     this.on('change:searchFilter', this.filterBySearch, this);
+
+    this.collection.on('reset', this.render, this);
   },
 
   events: {
@@ -62,6 +64,13 @@ app.views.Beers = Backbone.View.extend({
 
   filterBySearch:function(){
     this.collection.reset(directoryData), {silent: true};
+    var filterString = this.searchFilter,
+      filtered = _.filter(this.collection.models, function(item){
+        if(item.get('descript') != "" && item.get('abv') != "0"){
+        return item.get('name').toLowerCase().indexOf(filterString.toLowerCase()) !== -1;
+      }
+      });
+    this.collection.reset(filtered);
   }
 
 });
